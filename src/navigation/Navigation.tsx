@@ -23,11 +23,19 @@ export default class Navigation extends React.Component {
     {name: 'Archive', icon: <FontAwesomeIcon icon="file-archive"/>}
   ];
 
+  private static readonly ExternalNavigationButtons: NavigationButton[] = [
+    {name: "GitLab", icon: <FontAwesomeIcon icon={['fab', 'gitlab']}/>}
+  ];
+
   public render(): ReactNode {
     const listItems: ReactNode[] = Navigation.NavigationButtons.map((button) => {
-      return <li className="Icon">{button.icon}</li>
+      return <li className="Icon" title={button.name} aria-label={button.name} key={button.name}>{button.icon}</li>
     });
 
-    return <ul>{listItems}</ul>;
+    const southListItems: ReactNode[] = Navigation.ExternalNavigationButtons.map((button) => {
+      return <li className="Icon" title={button.name} aria-label={button.name} key={button.name}>{button.icon}</li>
+    });
+
+    return <div className="Nav-items"><ul>{listItems}</ul><ul>{southListItems}</ul></div>;
   }
 }

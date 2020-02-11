@@ -1,11 +1,28 @@
 {
   "name": "imagecaster-gui",
   "version": "0.2.2",
+  "description": "The GUI made with React and Electron for ImageCaster.",
+  "keywords": [
+    "imagecaster",
+    "react",
+    "node",
+    "typescript",
+    "electron",
+    "image",
+    "exif",
+    "gui"
+  ],
+  "license": "Apache 2.0",
+  "author": "Elypia CIC",
+  "homepage": "https://elypia.org/",
   "private": false,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/pro-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
+    "@material-ui/core": "^4.9.2",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -15,10 +32,13 @@
     "@types/react-dom": "^16.9.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-jsonschema-form": "^1.8.1",
     "react-scripts": "3.3.1",
+    "rjsf-material-ui": "^0.3.9",
     "typescript": "~3.7.2"
   },
   "devDependencies": {
+    "@types/react-jsonschema-form": "^1.7.0",
     "electron": "^8.0.0"
   },
   "scripts": {

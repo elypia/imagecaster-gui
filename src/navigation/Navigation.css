@@ -5,6 +5,13 @@ nav {
   text-align: center;
 }
 
+.Nav-items {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .Icon {
   padding: .5em;
 }
