@@ -1,5 +1,5 @@
 {
-  "name": "imagecaster-ui",
+  "name": "imagecaster-gui",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

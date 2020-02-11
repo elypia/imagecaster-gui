@@ -1,4 +1,4 @@
-# ImageCaster UI [![matrix-members]][matrix] [![discord-members]][discord] [![i18n-badge]][i18n] [![gitlab-build]][gitlab] [![gitlab-coverage]][gitlab] [![donate-shield]][elypia-donate]
+# ImageCaster GUI [![matrix-members]][matrix] [![discord-members]][discord] [![gitlab-build]][gitlab] [![gitlab-coverage]][gitlab] [![donate-shield]][elypia-donate]
 ## About
 The UI for [ImageCaster], built with [React] and Electron.
 
@@ -19,8 +19,7 @@ all rights are reserved by Elypia CIC.**
 
 [matrix]: https://matrix.to/#/+elypia:matrix.org "Matrix Invite"
 [discord]: https://discordapp.com/invite/hprGMaM "Discord Invite"
-[i18n]: https://i18n.elypia.org/engage/imagecaster-ui/?utm "Weblate Translations"
-[gitlab]: https://gitlab.com/Elypia/imagecaster-ui/commits/master "Repository on GitLab"
+[gitlab]: https://gitlab.com/Elypia/imagecaster-gui/commits/master "Repository on GitLab"
 [elypia-donate]: https://elypia.org/donate "Donate to Elypia"
 [ImageCaster]: https://gitlab.com/Elypia/imagecaster "ImageCaster on GitLab"
 [React]: https://reactjs.org/ "React"
@@ -30,7 +29,6 @@ all rights are reserved by Elypia CIC.**
 
 [matrix-members]: https://img.shields.io/matrix/elypia-general:matrix.org?logo=matrix "Matrix Shield"
 [discord-members]: https://discordapp.com/api/guilds/184657525990359041/widget.png "Discord Shield"
-[i18n-badge]: https://i18n.elypia.org/widgets/imagecaster-ui/-/svg-badge.svg "Weblate Translation Badge"
-[gitlab-build]: https://gitlab.com/Elypia/imagecaster-ui/badges/master/pipeline.svg "GitLab Build Shield"
-[gitlab-coverage]: https://gitlab.com/Elypia/imagecaster-ui/badges/master/coverage.svg "GitLab Coverage Shield"
+[gitlab-build]: https://gitlab.com/Elypia/imagecaster-gui/badges/master/pipeline.svg "GitLab Build Shield"
+[gitlab-coverage]: https://gitlab.com/Elypia/imagecaster-gui/badges/master/coverage.svg "GitLab Coverage Shield"
 [donate-shield]: https://img.shields.io/badge/Elypia-Donate-blueviolet "Donate Shield"
