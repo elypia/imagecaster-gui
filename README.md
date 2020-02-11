@@ -19,8 +19,8 @@ all rights are reserved by Elypia CIC.**
 
 [matrix]: https://matrix.to/#/+elypia:matrix.org "Matrix Invite"
 [discord]: https://discordapp.com/invite/hprGMaM "Discord Invite"
-[i18n]: https://i18n.elypia.org/engage/elypia-website/?utm "Weblate Translations"
-[gitlab]: https://gitlab.com/Elypia/elypia-website/commits/master "Repository on GitLab"
+[i18n]: https://i18n.elypia.org/engage/imagecaster-ui/?utm "Weblate Translations"
+[gitlab]: https://gitlab.com/Elypia/imagecaster-ui/commits/master "Repository on GitLab"
 [elypia-donate]: https://elypia.org/donate "Donate to Elypia"
 [ImageCaster]: https://gitlab.com/Elypia/imagecaster "ImageCaster on GitLab"
 [React]: https://reactjs.org/ "React"

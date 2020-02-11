@@ -8,10 +8,10 @@ cache:
 build:
   stage: build
   script:
-    - npm install
-    - npm run-script build
+    - yarn install
+    - yarn run build
 
 .test:
   stage: test
   script:
-    - npm run-script test
+    - npm run test
