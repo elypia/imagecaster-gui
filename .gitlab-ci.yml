@@ -1,0 +1,17 @@
+image: node:12.15.0-alpine3.11
+
+cache:
+  paths:
+    - node_modules/
+
+# Compile the website into static assets.
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run-script build
+
+.test:
+  stage: test
+  script:
+    - npm run-script test

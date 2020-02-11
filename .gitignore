@@ -21,3 +21,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+##################
+# elypia-website #
+##################
+
+*.pem
+*.key
+.idea/
+.scannerwork/

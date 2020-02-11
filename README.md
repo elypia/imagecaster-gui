@@ -1,44 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ImageCaster UI [![matrix-members]][matrix] [![discord-members]][discord] [![i18n-badge]][i18n] [![gitlab-build]][gitlab] [![gitlab-coverage]][gitlab] [![donate-shield]][elypia-donate]
+## About
+The UI for [ImageCaster], built with [React] and Electron.
 
-## Available Scripts
+# Requirements
+* [ImageCaster]
+* [NodeJS 12.15.0]
+* [React]
 
-In the project directory, you can run:
+## Open-Source
+This project is open-source under the [Apache 2.0]!  
+While not legal advice, you can find a [TL;DR] that sums up what you're
+allowed and not allowed to do along with any requirements if you want
+to use or derive work from this source code!  
 
-### `yarn start`
+**All non-code files including videos, models, audio, bitmaps, vectors,
+and animations such as GIFs, are not under the aforementioned license;
+all rights are reserved by Elypia CIC.** 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[matrix]: https://matrix.to/#/+elypia:matrix.org "Matrix Invite"
+[discord]: https://discordapp.com/invite/hprGMaM "Discord Invite"
+[i18n]: https://i18n.elypia.org/engage/elypia-website/?utm "Weblate Translations"
+[gitlab]: https://gitlab.com/Elypia/elypia-website/commits/master "Repository on GitLab"
+[elypia-donate]: https://elypia.org/donate "Donate to Elypia"
+[ImageCaster]: https://gitlab.com/Elypia/imagecaster "ImageCaster on GitLab"
+[React]: https://reactjs.org/ "React"
+[NodeJS 12.15.0]: https://nodejs.org/en/ "NodeJS"
+[Apache 2.0]: https://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License"
+[TL;DR]: https://tldrlegal.com/license/apache-license-2.0-(apache-2.0) "TL;DR of Apache 2.0"
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[matrix-members]: https://img.shields.io/matrix/elypia-general:matrix.org?logo=matrix "Matrix Shield"
+[discord-members]: https://discordapp.com/api/guilds/184657525990359041/widget.png "Discord Shield"
+[i18n-badge]: https://i18n.elypia.org/widgets/imagecaster-ui/-/svg-badge.svg "Weblate Translation Badge"
+[gitlab-build]: https://gitlab.com/Elypia/imagecaster-ui/badges/master/pipeline.svg "GitLab Build Shield"
+[gitlab-coverage]: https://gitlab.com/Elypia/imagecaster-ui/badges/master/coverage.svg "GitLab Coverage Shield"
+[donate-shield]: https://img.shields.io/badge/Elypia-Donate-blueviolet "Donate Shield"
