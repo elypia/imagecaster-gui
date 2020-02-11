@@ -1,6 +1,6 @@
 # ImageCaster GUI [![matrix-members]][matrix] [![discord-members]][discord] [![gitlab-build]][gitlab] [![gitlab-coverage]][gitlab] [![donate-shield]][elypia-donate]
 ## About
-The UI for [ImageCaster], built with [React] and Electron.
+The GUI for [ImageCaster], built with [React] and [Electron].
 
 # Requirements
 * [ImageCaster]
@@ -23,6 +23,7 @@ all rights are reserved by Elypia CIC.**
 [elypia-donate]: https://elypia.org/donate "Donate to Elypia"
 [ImageCaster]: https://gitlab.com/Elypia/imagecaster "ImageCaster on GitLab"
 [React]: https://reactjs.org/ "React"
+[Electron]: https://www.electronjs.org/ "Electron"
 [NodeJS 12.15.0]: https://nodejs.org/en/ "NodeJS"
 [Apache 2.0]: https://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License"
 [TL;DR]: https://tldrlegal.com/license/apache-license-2.0-(apache-2.0) "TL;DR of Apache 2.0"

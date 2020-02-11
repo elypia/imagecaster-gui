@@ -1,7 +1,7 @@
 {
   "name": "imagecaster-gui",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.2",
+  "private": false,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/pro-solid-svg-icons": "^5.12.1",
@@ -18,11 +18,14 @@
     "react-scripts": "3.3.1",
     "typescript": "~3.7.2"
   },
+  "devDependencies": {
+    "electron": "^8.0.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "electron": "electron ."
   },
   "eslintConfig": {
     "extends": "react-app"

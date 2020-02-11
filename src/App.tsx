@@ -9,7 +9,12 @@ library.add(faFileExport, faDebug, faObjectGroup, faFileArchive);
 
 const App = () => {
   return (
-    <Navigation/>
+      <div className="App">
+        <nav><Navigation/></nav>
+        <main>
+
+        </main>
+      </div>
   );
 }
 

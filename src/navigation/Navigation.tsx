@@ -25,11 +25,9 @@ export default class Navigation extends React.Component {
 
   public render(): ReactNode {
     const listItems: ReactNode[] = Navigation.NavigationButtons.map((button) => {
-      return <li>
-        {button.icon}
-      </li>
+      return <li className="Icon">{button.icon}</li>
     });
 
-    return <nav><ul>{listItems}</ul></nav>;
+    return <ul>{listItems}</ul>;
   }
 }
