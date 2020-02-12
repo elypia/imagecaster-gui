@@ -12,7 +12,7 @@
     "exif",
     "gui"
   ],
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "author": "Elypia CIC",
   "homepage": "https://elypia.org/",
   "private": false,

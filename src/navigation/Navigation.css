@@ -5,18 +5,18 @@ nav {
   text-align: center;
 }
 
-.Nav-items {
+#nav-items {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.Icon {
+.icon {
   padding: .5em;
 }
 
-.Icon:hover {
+.icon:hover {
   background-color: #404040;
   color: #E9ECEF;
   cursor: pointer;

@@ -7,9 +7,9 @@ import {faDebug, faFileArchive, faFileExport, faObjectGroup} from '@fortawesome/
 import {faGitlab} from '@fortawesome/free-brands-svg-icons'
 import Navigation from "./navigation/Navigation";
 import {CssBaseline} from "@material-ui/core";
+import ModulateWidget from "./widgets/ModulateWidget";
 
-/** Import the JSON Schema. */
-const Schema = require("./imagecaster.schema.json");
+library.add(faFileExport, faDebug, faObjectGroup, faFileArchive, faGitlab);
 
 /** Configura Material-UI theme. */
 const Theme = createMuiTheme({
@@ -18,7 +18,24 @@ const Theme = createMuiTheme({
   }
 });
 
-library.add(faFileExport, faDebug, faObjectGroup, faFileArchive, faGitlab);
+/** Import the JSON Schema. */
+const JsonSchema = require("./imagecaster-export.schema.json");
+
+const UiSchema = {
+  "export": {
+    "colors": {
+      "modulate": {
+        "items": {
+          "ui:field": "modulate"
+        }
+      }
+    }
+  }
+};
+
+const Fields : { [name: string]: any; } = {
+  "modulate": ModulateWidget
+};
 
 const App = () => {
   const search: string = window.location.search;
@@ -26,23 +43,24 @@ const App = () => {
   const formData: string | null = params.get('form-data');
   const formDataJson: object = JSON.parse(formData || '{}');
 
-  console.debug("FormData set to: ", formData);
+  console.debug("FormData set to: ", formDataJson);
 
   return (
-      <div className="App">
+      <div id="app">
         <nav><Navigation/></nav>
-        <main>
+        <main id="main">
           <ThemeProvider theme={Theme}>
             <CssBaseline/>
-            <div className="Form-wrapper">
-              <MuiForm schema={Schema} formData={formDataJson}/>
+            <div id="form-wrapper">
+              <MuiForm schema={JsonSchema} uiSchema={UiSchema} formData={formDataJson} fields={Fields}/>
+            </div>
+            <div id="preview">
+              Hello
             </div>
           </ThemeProvider>
         </main>
       </div>
   );
-
-
 };
 
 export default App;

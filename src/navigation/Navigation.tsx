@@ -29,13 +29,13 @@ export default class Navigation extends React.Component {
 
   public render(): ReactNode {
     const listItems: ReactNode[] = Navigation.NavigationButtons.map((button) => {
-      return <li className="Icon" title={button.name} aria-label={button.name} key={button.name}>{button.icon}</li>
+      return <li className="icon" title={button.name} aria-label={button.name} key={button.name}>{button.icon}</li>
     });
 
     const southListItems: ReactNode[] = Navigation.ExternalNavigationButtons.map((button) => {
-      return <li className="Icon" title={button.name} aria-label={button.name} key={button.name}>{button.icon}</li>
+      return <li className="icon" title={button.name} aria-label={button.name} key={button.name}>{button.icon}</li>
     });
 
-    return <div className="Nav-items"><ul>{listItems}</ul><ul>{southListItems}</ul></div>;
+    return <div id="nav-items"><ul>{listItems}</ul><ul>{southListItems}</ul></div>;
   }
 }
