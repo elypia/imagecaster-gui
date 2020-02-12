@@ -11,3 +11,7 @@ main {
   height: 100%;
   overflow-y: scroll;
 }
+
+.Form-wrapper {
+  margin: 1em;
+}
