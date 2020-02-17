@@ -42,6 +42,7 @@
     "@types/react-jsonschema-form": "^1.7.0",
     "electron": "^8.0.0"
   },
+  "main": "public/electron.ts",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

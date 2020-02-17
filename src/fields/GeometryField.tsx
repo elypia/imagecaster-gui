@@ -1,22 +1,24 @@
 import React, {ReactNode} from 'react';
-import "./TagField.css"
 import {Dialog, TextField} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import './SizeField.css';
+import './GeometryField.css';
 import {AxiosResponse} from "axios";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import {FieldUtils} from "./FieldUtils";
 
 const axios = require('axios').default;
 
 /** Widget that displays metadata tag settings and preview. */
-export default class SizeField extends React.Component {
+export default class GeometryField extends React.Component {
 
   public constructor(props: any) {
     super(props);
-    this.state = {'value': props.formData};
+    this.state = {
+      'geometry': props.formData
+    };
   }
 
   /**
@@ -34,7 +36,7 @@ export default class SizeField extends React.Component {
 
     const input: string = exportContext.input;
     const metaInput: string[] = input.split(',');
-    const filter: string = exportContext.sizes.filter;
+    const filter: string = exportContext.resize.filter;
 
     const formData: FormData = new FormData();
     formData.append('image', metaInput[1]);
@@ -54,19 +56,23 @@ export default class SizeField extends React.Component {
       });
   }
 
+  private closeDiaglog() : any {
+    this.setState({'output': undefined})
+  }
+
   // TODO: Use Preview component instead and pass props
   public render(): ReactNode {
-    let {value, output}: any = this.state;
+    const {geometry, output}: any = this.state;
 
     return (
       <div className="size-wrapper">
-        <TextField className="value-field" value={value} label="Value" onChange={() => this.setState({value})}/>
-        <Button variant="contained" onClick={() => this.previewImage(value)}>
+        <TextField className="value-field" value={geometry} label="Geometry" onChange={FieldUtils.onChange('geometry', this)}/>
+        <Button variant="contained" onClick={() => this.previewImage(geometry)}>
           <FontAwesomeIcon icon="image"/>
         </Button>
         <div>
         { output &&
-          <Dialog open={output != null} onClose={() => this.setState({'output': undefined})}>
+          <Dialog open={output != null} onClose={this.closeDiaglog()}>
             <DialogTitle>Preview</DialogTitle>
             <DialogContent className="dialog-content">
               <img src={output} alt='Preview of the input with the filter and geometry specified.'/>
@@ -81,7 +87,7 @@ export default class SizeField extends React.Component {
               </Button>
               <Button className="dialog-button"
                       startIcon={<FontAwesomeIcon icon='times'/>}
-                      onClick={() => this.setState({'output': undefined})}
+                      onClick={this.closeDiaglog()}
                       aria-label="close">
                   Close
               </Button>

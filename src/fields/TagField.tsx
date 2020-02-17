@@ -12,16 +12,31 @@ export default class TagField extends React.Component {
   /** An array of all the available tags that can be set. */
   private readonly Tags: string[];
 
+  /** Get a readonly view of the underlying properties. */
+  readonly props: any;
+
   public constructor(props: any) {
     super(props);
     this.state = {...props.formData};
     this.Tags = props.schema.properties.tag.enum;
   }
 
+  /**
+   * Checks if we should display the specified tag.
+   *
+   * @param tagToCheck The tag to check.
+   */
+  public shouldDisplayTag(tagToCheck: string) : boolean {
+    const allConfiguredTags: any[] = this.props.formContext.export.metadata.exif.tags;
+    const allConfiguredTagNames = allConfiguredTags.map((configuredTag) => configuredTag.tag);
+    const {tag}: any = this.state;
+    return tagToCheck === tag || !allConfiguredTagNames.includes(tagToCheck);
+  }
+
   public render(): ReactNode {
     const {tag, value}: any = this.state;
 
-    const menuItems: ReactNode[] = this.Tags.map((tagEnum) => {
+    const menuItems: ReactNode[] = this.Tags.filter((tagf) => this.shouldDisplayTag(tagf)).map((tagEnum) => {
       return <MenuItem key={tagEnum} value={tagEnum}>{tagEnum}</MenuItem>
     });
 

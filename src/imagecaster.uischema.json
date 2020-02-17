@@ -9,10 +9,10 @@
         }
       }
     },
-    "sizes": {
-      "dimensions": {
+    "resize": {
+      "geometries": {
         "items": {
-          "ui:field": "size"
+          "ui:field": "geometry"
         }
       }
     },

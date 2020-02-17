@@ -1,9 +1,9 @@
 import React, {ReactNode} from 'react';
 import ModulateField from "../fields/ModulateField";
-import SizeField from "../fields/SizeField";
 import TagField from "../fields/TagField";
 import MuiForm from "rjsf-material-ui";
 import {AxiosResponse} from "axios";
+import GeometryField from "../fields/GeometryField";
 
 const axios = require('axios').default;
 
@@ -16,7 +16,7 @@ export default class Export extends React.Component {
 
   private readonly fields : { [name: string]: any; } = {
     "modulate": ModulateField,
-    "size": SizeField,
+    "geometry": GeometryField,
     "tag": TagField,
   };
 

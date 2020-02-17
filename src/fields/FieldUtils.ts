@@ -1,3 +1,7 @@
+/**
+ * Utility methods to perform generic functionality on
+ * fields and widgets for React JSONSchema Forms.
+ */
 export class FieldUtils {
 
   /**
