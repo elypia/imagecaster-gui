@@ -1,11 +1,10 @@
 import React, {ReactNode} from 'react';
 
-/** Widget that displays Modulation settings and preview. */
-export default class ModulateWidget extends React.Component {
+/** Widget that displays modulation settings and preview. */
+export default class ModulateField extends React.Component {
 
   public constructor(props: any) {
     super(props);
-    console.log(props);
     this.state = {...props.formData};
   }
 

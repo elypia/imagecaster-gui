@@ -4,6 +4,10 @@
 }
 
 nav {
+  background-color: #1B1B1B;
+  color: #CFD0D1;
+  font-size: 1.5em;
+  text-align: center;
   height: 100%;
 }
 
@@ -14,7 +18,7 @@ nav {
 }
 
 #form-wrapper, #preview {
-  width: 50%;
+  flex-grow: 1;
 }
 
 #form-wrapper {

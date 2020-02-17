@@ -1,0 +1,27 @@
+{
+  "export": {
+    "metadata": {
+      "exif": {
+        "tags": {
+          "items": {
+            "ui:field": "tag"
+          }
+        }
+      }
+    },
+    "sizes": {
+      "dimensions": {
+        "items": {
+          "ui:field": "size"
+        }
+      }
+    },
+    "colors": {
+      "modulate": {
+        "items": {
+
+        }
+      }
+    }
+  }
+}

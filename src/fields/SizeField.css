@@ -1,0 +1,15 @@
+.size-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dialog-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-button .MuiButton-label {
+  padding: 4px;
+}
