@@ -1,24 +1,27 @@
-import React, {ReactNode} from 'react';
+import React, {Component, ReactNode} from 'react';
+import "./TagField.css"
 import {TextField} from "@material-ui/core";
 import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
-import "./TagField.css"
-import {FieldUtils} from "./FieldUtils";
+import {FieldUtils} from "../../utils/FieldUtils";
+import {FieldProps} from "react-jsonschema-form";
 
 /** Widget that displays metadata tag settings and preview. */
-export default class TagField extends React.Component {
+export default class TagField extends Component<FieldProps> {
 
   /** An array of all the available tags that can be set. */
   private readonly Tags: string[];
 
-  /** Get a readonly view of the underlying properties. */
-  readonly props: any;
-
-  public constructor(props: any) {
+  public constructor(props: FieldProps) {
     super(props);
     this.state = {...props.formData};
-    this.Tags = props.schema.properties.tag.enum;
+    let properties: any = props.schema.properties;
+
+    if (properties)
+      this.Tags = properties.tag.enum;
+    else
+      this.Tags = [];
   }
 
   /**
@@ -41,12 +44,12 @@ export default class TagField extends React.Component {
     });
 
     return (
-      <div>
+      <div className="tag-field">
         <InputLabel id="select-tag">Tag</InputLabel>
-        <Select labelId="select-tag" className="select-tag-field" value={tag} onChange={FieldUtils.onChange('tag', this)}>
+        <Select labelId="select-tag" className="select-tag-field" value={tag} onChange={FieldUtils.setState('tag', this)}>
           {menuItems}
         </Select>
-        <TextField className="value-field" value={value} label="Value" onChange={FieldUtils.onChange('value', this)}/>
+        <TextField className="value-field" value={value} label="Value" onChange={FieldUtils.setState('value', this)}/>
       </div>
     );
   }

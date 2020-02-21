@@ -1,6 +1,6 @@
 {
   "name": "imagecaster-gui",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "The GUI made with React and Electron for ImageCaster.",
   "keywords": [
     "imagecaster",
@@ -23,23 +23,23 @@
     "@fortawesome/react-fontawesome": "^0.1.8",
     "@material-ui/core": "^4.9.2",
     "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/jest-dom": "5.1.1",
     "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
+    "@testing-library/user-event": "10.0.0",
+    "@types/jest": "25.1.2",
+    "@types/node": "13.7.2",
+    "@types/react": "16.9.20",
     "@types/react-dom": "^16.9.0",
+    "@types/react-jsonschema-form": "^1.7.0",
     "axios": "^0.19.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-jsonschema-form": "^1.8.1",
-    "react-scripts": "3.3.1",
+    "react-scripts": "3.4.0",
     "rjsf-material-ui": "^0.3.9",
     "typescript": "~3.7.2"
   },
   "devDependencies": {
-    "@types/react-jsonschema-form": "^1.7.0",
     "electron": "^8.0.0"
   },
   "main": "public/electron.ts",
@@ -50,7 +50,16 @@
     "electron": "electron ."
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "semi": [
+        2,
+        "always"
+      ]
+    },
+    "parserOptions": {
+      "ecmaVersion": 6
+    }
   },
   "browserslist": {
     "production": [
@@ -60,8 +69,7 @@
     ],
     "development": [
       "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 firefox version"
     ]
   }
 }

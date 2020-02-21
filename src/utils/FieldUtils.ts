@@ -1,3 +1,5 @@
+import {Component} from "react";
+
 /**
  * Utility methods to perform generic functionality on
  * fields and widgets for React JSONSchema Forms.
@@ -12,14 +14,11 @@ export class FieldUtils {
    * @param name The name of the property in the schema.
    * @param field The field implementation this occured in.
    */
-  public static onChange(name: string, field: any) : any {
+  public static setState(name: string, field: Component<FieldProps>) : any {
     return (event: any) => {
       field.setState({
         [name]: event.target.value
-      }, () => {
-        const props : any = field.props;
-        props.onChange(field.state)
-      })
+      }, () => field.props.onChange(field.state))
     };
   }
 }

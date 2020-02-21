@@ -5,6 +5,10 @@
   justify-content: space-between;
 }
 
+.navigation-button-list-item {
+  list-style: none;
+}
+
 .icon {
   padding: .5em;
 }

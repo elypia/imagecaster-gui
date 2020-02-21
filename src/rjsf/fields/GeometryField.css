@@ -1,7 +1,17 @@
-.size-wrapper {
+.testing-something {
+  max-width: 360px;
+  padding: 1em;
+}
+
+.geometry-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.geometry-wrapper .value-field {
+  flex-grow: 1;
+  padding-right: 1em;
 }
 
 .dialog-content {
