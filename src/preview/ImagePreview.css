@@ -1,0 +1,7 @@
+#preview-wrapper {
+  display: flex;
+}
+
+#preview-previously-previewed-pane {
+  width: 128px;
+}

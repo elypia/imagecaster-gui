@@ -7,10 +7,4 @@
   padding: 0 1em 1em 0;
 }
 
-.color-slider {
-  display: flex;
-}
 
-.color-slider .color-slider-label {
-  width: 128px;
-}
