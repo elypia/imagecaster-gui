@@ -1,4 +1,5 @@
 import {Component} from "react";
+import {FieldProps} from "react-jsonschema-form";
 
 /**
  * Utility methods to perform generic functionality on

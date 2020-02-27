@@ -2,14 +2,14 @@
  * Used to send the backend information to preview
  * an image at a particular geometry.
  */
-export default interface ResizeRequest {
+import ResizeAllFiltersRequest from "./ResizeAllFiltersRequest";
 
-  /** A base64 encoded string, optionally with content-data to send. */
-  image: string;
+/**
+ * This is just the {@link ResizeAllFiltersRequest} except we specify
+ * a single filter to export instead of all filters.
+ */
+export default interface ResizeRequest extends ResizeAllFiltersRequest {
 
   /** The filter to use when resizing the image, this can be null. */
   filter?: string;
-
-  /** The geometry to resize by, this uses the ImageMagick geometry syntax. */
-  geometry: string;
 }

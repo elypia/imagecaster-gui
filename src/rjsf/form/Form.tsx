@@ -1,10 +1,20 @@
-import React, {Component, FormEventHandler, ReactNode} from 'react';
+import React, {Component, ReactNode} from 'react';
 import MuiForm from "rjsf-material-ui";
-import {Field, UiSchema} from "react-jsonschema-form";
+import {Field, UiSchema, Widget} from "react-jsonschema-form";
 import {JSONSchema6} from "json-schema";
 import ColorField from "../fields/ColorField";
 import GeometryField from "../fields/GeometryField";
 import TagField from "../fields/TagField";
+import RangeWidget from "../widgets/RangeWidget";
+import PreviewableImage from "../../models/PreviewableImage";
+
+export interface FormContext {
+
+  formData: object
+
+  /** The callback to add images to the preview panel. */
+  handleAppendToPreview: (image: PreviewableImage) => void;
+}
 
 export interface FormProps {
 
@@ -15,48 +25,65 @@ export interface FormProps {
   uiSchema: UiSchema;
 
   /** The default form-data and context to add to the form. */
-  defaultFormData?: object;
+  defaultFormData: object;
+
+  /** The callback to add images to the preview panel. */
+  handleAppendToPreview: (image: PreviewableImage) => void;
 }
 
 export interface FormState {
 
-  /** The current state of the form-date and context. */
-  formData?: object;
+  /** The current state of the context. */
+  formContext: FormContext;
 }
 
 export default class Form extends Component<FormProps, FormState> {
 
-  private readonly fields : { [name: string]: Field } = {
+  private readonly fields: { [name: string]: Field } = {
     'color': ColorField,
     'geometry': GeometryField,
     'tag': TagField
   };
 
+  private readonly widgets: { [name: string]: Widget } = {
+    'elypia-range': RangeWidget
+  };
+
   public constructor(props: FormProps) {
     super(props);
     this.state = {
-      formData: props.defaultFormData
+      formContext: {
+        formData: props.defaultFormData,
+        handleAppendToPreview: props.handleAppendToPreview
+      }
     };
+
+    this.handleFormChange = this.handleFormChange.bind(this);
   }
 
   /** Rerender the components with the formContext. */
-  public onChange(): FormEventHandler<HTMLElement> {
-    return (event: any) => {
-      this.setState({formData: event.formData})
-    };
+  public handleFormChange(event: any): void {
+    this.setState({
+      formContext: {
+        formData: event.formData,
+        handleAppendToPreview: this.props.handleAppendToPreview
+      }
+    })
   }
 
   public render(): ReactNode {
-    const formData = this.state.formData;
+    const {jsonSchema, uiSchema} = this.props;
+    const {formContext} = this.state;
 
     return (
       <MuiForm
-        schema={this.props.jsonSchema}
-        uiSchema={this.props.uiSchema}
+        schema={jsonSchema}
+        uiSchema={uiSchema}
         fields={this.fields}
-        formData={formData}
-        formContext={formData}
-        onChange={this.onChange}
+        widgets={this.widgets}
+        formData={formContext.formData}
+        formContext={formContext}
+        onChange={this.handleFormChange}
       />
     );
   }

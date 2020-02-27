@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import './App.css';
 import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -14,8 +14,9 @@ import {
 import {faGitlab} from '@fortawesome/free-brands-svg-icons'
 import Navigation from "./menus/navigation/Navigation";
 import {CssBaseline} from "@material-ui/core";
-import FormContainer from "./rjsf/form/FormContainer";
-import InfoPanel from "./menus/info-panel/InfoPanel";
+import MainPanel from "./menus/main-panel/MainPanel";
+import {faEye} from "@fortawesome/pro-solid-svg-icons/faEye";
+import {faTrashAlt} from "@fortawesome/pro-solid-svg-icons/faTrashAlt";
 
 library.add(
   // Navigation Start
@@ -30,9 +31,11 @@ library.add(
   // Field Previews
   faImage,
 
-  // Preview Dialog
+  // Preview
   faDownload,
-  faTimes
+  faTimes,
+  faTrashAlt,
+  faEye
 );
 
 /** Configura Material-UI theme. */
@@ -51,9 +54,9 @@ const Theme = createMuiTheme({
 /** Instance of all available buttons in the navigation bar. */
 const NavigationButtons: any[] = [
   {
-    name: 'Export',
+    name: 'Build',
     icon: 'file-export',
-    url: '/?form=export'
+    url: '/?form=build'
   },
   {
     name: 'Check',
@@ -77,7 +80,7 @@ const NavigationButtons: any[] = [
   }
 ];
 
-const App = () => {
+const App: FC = () => {
   return (
     <ThemeProvider theme={Theme}>
       <CssBaseline/>
@@ -85,12 +88,9 @@ const App = () => {
         <nav>
           <Navigation links={NavigationButtons}/>
         </nav>
-        <main>
-          <FormContainer/>
+        <main id="app-root-main">
+          <MainPanel/>
         </main>
-        <div>
-          <InfoPanel/>
-        </div>
       </div>
     </ThemeProvider>
   );

@@ -1,7 +1,6 @@
-#preview-wrapper {
+.image-preview-wrapper {
+  background-color: #1b1b1b;
+  border-radius: 1em;
+  margin: 1em;
   display: flex;
-}
-
-#preview-previously-previewed-pane {
-  width: 128px;
 }

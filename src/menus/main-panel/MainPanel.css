@@ -1,0 +1,14 @@
+#main-panel-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+#app-root-form, #app-root-info-panel {
+  height: 100%;
+  width: 0;
+  margin: 0 1em;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 1em;
+}

@@ -30,7 +30,7 @@ export default class TagField extends Component<FieldProps> {
    * @param tagToCheck The tag to check.
    */
   public shouldDisplayTag(tagToCheck: string) : boolean {
-    const allConfiguredTags: any[] = this.props.formContext.build.metadata.exif.tags;
+    const allConfiguredTags: any[] = this.props.formContext.formData.build.metadata.exif.tags;
     const allConfiguredTagNames = allConfiguredTags.map((configuredTag) => configuredTag.tag);
     const {tag}: any = this.state;
     return tagToCheck === tag || !allConfiguredTagNames.includes(tagToCheck);
@@ -46,10 +46,10 @@ export default class TagField extends Component<FieldProps> {
     return (
       <div className="tag-field">
         <InputLabel id="select-tag">Tag</InputLabel>
-        <Select labelId="select-tag" className="select-tag-field" value={tag} onChange={FieldUtils.setState('tag', this)}>
+        <Select labelId="select-tag" className="select-tag-field" defaultValue={tag} onChange={FieldUtils.setState('tag', this)}>
           {menuItems}
         </Select>
-        <TextField className="value-field" value={value} label="Value" onChange={FieldUtils.setState('value', this)}/>
+        <TextField className="value-field" defaultValue={value} label="Value" onChange={FieldUtils.setState('value', this)}/>
       </div>
     );
   }

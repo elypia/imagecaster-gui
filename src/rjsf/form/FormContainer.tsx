@@ -4,6 +4,13 @@ import {CircularProgress} from "@material-ui/core";
 import Form from "./Form";
 import {UiSchema} from "react-jsonschema-form";
 import {JSONSchema6} from "json-schema";
+import PreviewableImage from "../../models/PreviewableImage";
+
+interface FormContainerProps {
+
+  /** The callback to add images to the preview panel. */
+  handleAppendToPreview: (image: PreviewableImage) => void;
+}
 
 interface FormContainerState {
 
@@ -17,55 +24,61 @@ interface FormContainerState {
   formData?: unknown;
 }
 
-export default class FormContainer extends Component<any, FormContainerState> {
+export default class FormContainer extends Component<FormContainerProps, FormContainerState> {
 
   private readonly uiSchema: UiSchema = {
-    export: {
+    build: {
       metadata: {
         exif: {
           tags: {
-            items: {
-              // 'ui:field': 'tag',
-            },
             'ui:options': {
               orderable: false,
+            },
+            items: {
+              'ui:field': 'tag'
             }
           }
         }
       },
       resize: {
         geometries: {
-          items: {
-            // 'ui:field': 'geometry',
-          },
           'ui:options': {
             orderable: false,
+          },
+          items: {
+            'ui:field': 'geometry',
           }
         }
       },
       colors: {
         modulate: {
+          'ui:options': {
+            orderable: false,
+          },
           items: {
-            // 'ui:field': 'color',
+            'ui:field': 'color',
             brightness: {
+              'ui:widget': 'elypia-range',
               'ui:emptyValue': 100
             },
             saturation: {
+              'ui:widget': 'elypia-range',
               'ui:emptyValue': 100
             },
             hue: {
+              'ui:widget': 'elypia-range',
               'ui:emptyValue': 100
             }
-          },
-          'ui:options': {
-            orderable: false
           }
+        },
+        'ui:options': {
+          orderable: false
         }
       }
-    },
+    }
   };
 
-  public constructor(props: any) {
+  public constructor(props: FormContainerProps) {
     super(props);
     this.state = {
       loaded: false
@@ -78,11 +91,11 @@ export default class FormContainer extends Component<any, FormContainerState> {
     const formData: string | null = params.get('form-data');
     const formDataJson: object = JSON.parse(formData || '{}');
 
-    const form: string = params.get('form') || 'export';
+    const form: string = params.get('form') || 'build';
 
     console.debug("FormData set to:\n", formDataJson);
 
-    axios.get(`http://localhost:5000/schema?form=${form}`)
+    axios.get(`http://localhost:5000/schema/json-schema?properties=${form}`)
       .then((resp: AxiosResponse) => {
         console.debug('Finshed loading ImageCaster schema.');
         this.setState({
@@ -110,6 +123,7 @@ export default class FormContainer extends Component<any, FormContainerState> {
         jsonSchema={schema}
         uiSchema={this.uiSchema}
         defaultFormData={formData}
+        handleAppendToPreview={this.props.handleAppendToPreview}
       />
     );
   }

@@ -1,0 +1,7 @@
+.color-slider {
+  display: flex;
+}
+
+.color-slider .color-slider-label {
+  width: 128px;
+}

@@ -1,3 +1,7 @@
 .info-panel-root {
   height: 100%;
 }
+
+#info-panel-tabs {
+  margin-bottom: 1em;
+}
