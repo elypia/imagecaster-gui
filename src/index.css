@@ -1,4 +1,6 @@
-/* Reset */
+/*
+  Reset
+*/
 
 html, body, div, header, footer,
 h1, h2, h3, h4, h5, h6,
@@ -14,4 +16,30 @@ code {
 
 html, body, #root {
   height: 100%;
+}
+
+/*
+  Utilities
+*/
+
+/* Checked Background */
+.checkered-background {
+  background-image: linear-gradient(to right, #C0C0C080, #C0C0C080),
+  linear-gradient(to right, #2C2C2C 50%, #404040 50%),
+  linear-gradient(to bottom, #2C2C2C 50%, #404040 50%);
+  background-blend-mode: normal, difference, normal;
+  background-size: 2em 2em;
+}
+
+/* Center Children and Text in Parent */
+.flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.large-text {
+  font-size: 2em;
 }

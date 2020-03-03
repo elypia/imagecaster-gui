@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FunctionComponent} from 'react';
 import './NavigationButton.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import StringUtils from "../../utils/StringUtils";
@@ -16,7 +16,7 @@ export interface NavigationButtonProps {
   url: string;
 }
 
-const NavigationButton: FC<NavigationButtonProps> = (props: NavigationButtonProps) => {
+const NavigationButton: FunctionComponent<NavigationButtonProps> = (props: NavigationButtonProps) => {
   return (
     <a className="navigation-icon-button" href={props.url} target={StringUtils.isExternalUrl(props.url) ? '_blank' : undefined}>
       <div className="icon" title={props.name} aria-label={props.name}>

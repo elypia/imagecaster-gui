@@ -1,10 +1,11 @@
 import React, {Component, ReactNode} from 'react';
-import axios, {AxiosError, AxiosResponse} from 'axios';
-import {CircularProgress} from "@material-ui/core";
-import Form from "./Form";
-import {UiSchema} from "react-jsonschema-form";
+import './FormContainer.css'
 import {JSONSchema6} from "json-schema";
+import {UiSchema} from "react-jsonschema-form";
+import axios, {AxiosError, AxiosResponse} from 'axios';
+import Form from "./Form";
 import PreviewableImage from "../../models/PreviewableImage";
+import Loadable, {LoadPosition} from "../../library/Loadable";
 
 interface FormContainerProps {
 
@@ -15,7 +16,7 @@ interface FormContainerProps {
 interface FormContainerState {
 
   /** If the container has finished loading yet. */
-  loaded: boolean;
+  loadPosition: LoadPosition;
 
   /** The JSON schema to generate the form for. */
   schema?: JSONSchema6;
@@ -30,13 +31,19 @@ export default class FormContainer extends Component<FormContainerProps, FormCon
     build: {
       metadata: {
         exif: {
-          tags: {
-            'ui:options': {
-              orderable: false,
-            },
-            items: {
-              'ui:field': 'tag'
-            }
+          'ui:options': {
+            orderable: false,
+          },
+          items: {
+            'ui:field': 'tag'
+          }
+        },
+        iptc: {
+          'ui:options': {
+            orderable: false,
+          },
+          items: {
+            'ui:field': 'tag'
           }
         }
       },
@@ -50,8 +57,8 @@ export default class FormContainer extends Component<FormContainerProps, FormCon
           }
         }
       },
-      colors: {
-        modulate: {
+      recolor: {
+        modulation: {
           'ui:options': {
             orderable: false,
           },
@@ -81,7 +88,7 @@ export default class FormContainer extends Component<FormContainerProps, FormCon
   public constructor(props: FormContainerProps) {
     super(props);
     this.state = {
-      loaded: false
+      loadPosition: LoadPosition.Loading
     };
   }
 
@@ -100,31 +107,32 @@ export default class FormContainer extends Component<FormContainerProps, FormCon
         console.debug('Finshed loading ImageCaster schema.');
         this.setState({
           schema: resp.data,
-          loaded: true,
+          loadPosition: LoadPosition.Loaded,
           formData: formDataJson
         });
       })
       .catch((error: AxiosError) => {
         console.error(error);
+        this.setState({
+          loadPosition: LoadPosition.Failed,
+        });
       });
   }
 
   public render(): ReactNode {
-    const {loaded, schema, formData}: any = this.state;
-
-    if (!loaded) {
-      return (
-        <CircularProgress/>
-      );
-    }
+    const {loadPosition, schema, formData} = this.state;
 
     return (
-      <Form
-        jsonSchema={schema}
-        uiSchema={this.uiSchema}
-        defaultFormData={formData}
-        handleAppendToPreview={this.props.handleAppendToPreview}
-      />
+      <div>
+        <Loadable position={loadPosition} errorMessage="Failed to initialize application.">
+          <Form
+            jsonSchema={schema as JSONSchema6}
+            uiSchema={this.uiSchema}
+            defaultFormData={formData as object}
+            handleAppendToPreview={this.props.handleAppendToPreview}
+          />
+        </Loadable>
+      </div>
     );
   }
 }

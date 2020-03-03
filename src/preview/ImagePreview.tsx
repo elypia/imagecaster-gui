@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, {FunctionComponent} from "react";
 import './ImagePreview.css'
 import PreviewableImage from "../models/PreviewableImage";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -14,7 +14,7 @@ export interface ImagePreviewProps {
   handleSelectImage: (image: PreviewableImage) => void;
 }
 
-const ImagePreview: FC<ImagePreviewProps> = (props: ImagePreviewProps) => {
+const ImagePreview: FunctionComponent<ImagePreviewProps> = (props: ImagePreviewProps) => {
   const {image, handleRemoveImage, handleSelectImage} = props;
 
   return (

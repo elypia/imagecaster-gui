@@ -1,11 +1,11 @@
-import React, {FC} from "react";
+import React, {FunctionComponent} from "react";
 import './RangeWidget.css'
 import {WidgetProps} from "react-jsonschema-form";
 import {rangeSpec} from "react-jsonschema-form/lib/utils";
 import {Typography} from "@material-ui/core";
 import Slider from "@material-ui/core/Slider";
 
-const RangeWidget: FC<WidgetProps> = (props: WidgetProps) => {
+const RangeWidget: FunctionComponent<WidgetProps> = (props: WidgetProps) => {
   const {
     label,
     id,

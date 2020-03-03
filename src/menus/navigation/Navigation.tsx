@@ -1,4 +1,4 @@
-import React, {FC, ReactNode} from 'react';
+import React, {FunctionComponent, ReactNode} from 'react';
 import './Navigation.css';
 import NavigationButton, {NavigationButtonProps} from "./NavigationButton";
 
@@ -12,7 +12,7 @@ export interface NavigationProps {
 }
 
 /** The navigation bar for this application. */
-const Navigation: FC<NavigationProps> = (props: NavigationProps) => {
+const Navigation: FunctionComponent<NavigationProps> = (props: NavigationProps) => {
   const listItems: ReactNode[] = props.links.map((buttonProps: NavigationButtonProps) => {
     return (
       <li className="navigation-button-list-item" key={buttonProps.name}>

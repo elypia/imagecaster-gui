@@ -1,11 +1,11 @@
-import React, {FC} from 'react';
+import React, {FunctionComponent} from 'react';
 import ReactMarkdown from 'react-markdown';
 
 interface DocumentationProps {
 
 }
 
-const Documentation: FC<DocumentationProps> = (props: DocumentationProps) => {
+const Documentation: FunctionComponent<DocumentationProps> = (props: DocumentationProps) => {
   const markdown: string =
   `
   # Geometry 
