@@ -135,6 +135,7 @@ export default class GeometryField extends Component<FieldProps<string>, Geometr
       });
   }
 
+  // TODO: Accept numbers, not just text when initially loading
   public render(): ReactNode {
     let {geometry, error} = this.state;
 

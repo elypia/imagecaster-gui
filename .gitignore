@@ -34,4 +34,4 @@ package-lock.json
 *.pem
 *.key
 .idea/
-.scannerwork/
+build-electron/

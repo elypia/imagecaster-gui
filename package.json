@@ -14,7 +14,6 @@
   ],
   "license": "Apache-2.0",
   "author": "Elypia CIC",
-  "homepage": "https://elypia.org/",
   "private": false,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
@@ -43,12 +42,15 @@
     "typescript": "~3.7.2"
   },
   "devDependencies": {
-    "electron": "^8.0.0"
+    "electron": "^8.0.0",
+    "electron-packager": "^14.2.1"
   },
-  "main": "src/main.ts",
+  "homepage": "./",
+  "main": "public/main.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:electron": "electron-packager --all --out ./build-electron/ ./build/ imagecaster",
     "test": "react-scripts test",
     "electron": "electron ."
   },

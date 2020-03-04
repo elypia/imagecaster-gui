@@ -31,6 +31,10 @@ export default class TagField extends Component<FieldProps> {
    */
   public shouldDisplayTag(tagToCheck: string) : boolean {
     const allConfiguredTags: any[] = this.props.formContext.formData.build.metadata.exif;
+
+    if (!allConfiguredTags)
+      return true;
+
     const allConfiguredTagNames = allConfiguredTags.map((configuredTag) => configuredTag.tag);
     const {tag}: any = this.state;
     return tagToCheck === tag || !allConfiguredTagNames.includes(tagToCheck);
