@@ -17,6 +17,7 @@ export interface ImagePreviewProps {
 const ImagePreview: FunctionComponent<ImagePreviewProps> = (props: ImagePreviewProps) => {
   const {image, handleRemoveImage, handleSelectImage} = props;
 
+  // TODO: Make it add the image right away, but with a loading spinner until it's actually finished
   return (
     <div className="image-preview-wrapper">
       <img

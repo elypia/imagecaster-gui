@@ -74,7 +74,7 @@ export default class Preview extends Component<PreviewProps, PreviewState> {
                         startIcon={<FontAwesomeIcon icon='download'/>}
                         aria-label="download"
                         download>
-                  Download
+                  Save
                 </Button>
                 <Button className="dialog-button"
                         startIcon={<FontAwesomeIcon icon='times'/>}

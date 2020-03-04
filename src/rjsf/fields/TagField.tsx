@@ -39,6 +39,7 @@ export default class TagField extends Component<FieldProps> {
   public render(): ReactNode {
     const {tag, value}: any = this.state;
 
+    // TODO: Make this it's own component or element somehow to group unique tags
     const menuItems: ReactNode[] = this.Tags.filter((tagf) => this.shouldDisplayTag(tagf)).map((tagEnum) => {
       return <MenuItem key={tagEnum} value={tagEnum}>{tagEnum}</MenuItem>
     });

@@ -141,9 +141,10 @@ export default class GeometryField extends Component<FieldProps<string>, Geometr
     return (
       <div className="geometry-wrapper">
         <TextField className="value-field"
+                   type="text"
                    defaultValue={geometry}
                    label="Geometry"
-                   onChange={FieldUtils.setState('geometry', this)}/>
+                   onChange={FieldUtils.setArrayState('geometry', this)}/>
         <Button variant="contained" onClick={this.handleResizePreview}>
           <FontAwesomeIcon icon="eye"/>
         </Button>

@@ -7,6 +7,7 @@ import GeometryField from "../fields/GeometryField";
 import TagField from "../fields/TagField";
 import RangeWidget from "../widgets/RangeWidget";
 import PreviewableImage from "../../models/PreviewableImage";
+import axios, {AxiosError, AxiosResponse} from "axios";
 
 export interface FormContext {
 
@@ -71,6 +72,23 @@ export default class Form extends Component<FormProps, FormState> {
     })
   }
 
+  private handleFormSubmission(event: any): void {
+    let formData = JSON.parse(JSON.stringify(event.formData));
+
+    formData.build.input = formData.build.input.map((o: string) => 'base64:' + o);
+    formData.build.recolor.mask.sources = formData.build.recolor.mask.sources.map((o: string) => 'base64:' + o);
+
+    console.info('Submittied form to backend with:', formData);
+
+    axios.post('http://localhost:5000/action/build', formData)
+      .then((resp: AxiosResponse) => {
+        console.log('Finished performing build action.');
+      })
+      .catch((error: AxiosError) => {
+        console.error(error);
+      });
+  }
+
   public render(): ReactNode {
     const {jsonSchema, uiSchema} = this.props;
     const {formContext} = this.state;
@@ -84,6 +102,7 @@ export default class Form extends Component<FormProps, FormState> {
         formData={formContext.formData}
         formContext={formContext}
         onChange={this.handleFormChange}
+        onSubmit={this.handleFormSubmission}
       />
     );
   }

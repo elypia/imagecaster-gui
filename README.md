@@ -2,6 +2,8 @@
 ## About
 The GUI for [ImageCaster], built with [React] and [Electron].
 
+![GUI Preview]
+
 # Requirements
 * [ImageCaster]
 * [NodeJS 12.15.0]
@@ -33,3 +35,4 @@ all rights are reserved by Elypia CIC.**
 [Build]: https://gitlab.com/Elypia/imagecaster-gui/badges/master/pipeline.svg "GitLab Build Shield"
 [Coverage]: https://gitlab.com/Elypia/imagecaster-gui/badges/master/coverage.svg "GitLab Coverage Shield"
 [Donate]: https://img.shields.io/badge/Elypia-Donate-blueviolet "Donate Shield"
+[GUI Preview]: assets/preview.png "Preview of ImageCaster GUI"

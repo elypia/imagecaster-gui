@@ -45,7 +45,7 @@
   "devDependencies": {
     "electron": "^8.0.0"
   },
-  "main": "public/electron.ts",
+  "main": "src/main.ts",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

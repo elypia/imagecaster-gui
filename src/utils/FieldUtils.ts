@@ -22,4 +22,14 @@ export class FieldUtils {
       }, () => field.props.onChange(field.state))
     };
   }
+
+  public static setArrayState(name: string, field: Component<FieldProps>) : any {
+    return (event: any) => {
+      const value = event.target.value;
+
+      field.setState({
+        [name]: value
+      }, () => field.props.onChange(value))
+    };
+  }
 }

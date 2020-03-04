@@ -93,7 +93,8 @@ export default class ColorField extends Component<FieldProps, ColorFieldState> {
       return;
     }
 
-    const mask: string = build.colors.mask;
+    // TODO: Select mask in a more appropriate way
+    const mask: string = build.recolor?.mask?.sources[0];
 
     this.requestPreview(input, mask, brightness, saturation, hue);
   }
@@ -119,7 +120,7 @@ export default class ColorField extends Component<FieldProps, ColorFieldState> {
 
     console.info('Previewing image with modulation with values: %s / %s / %s', brightness, saturation, hue);
 
-    axios.post('http://localhost:5000/preview/modulate', request)
+    axios.post('http://localhost:5000/preview/recolor', request)
       .then((resp: AxiosResponse) => {
         console.log('Completed request and received preview succesfully.');
         const timestamp: Date = new Date();
