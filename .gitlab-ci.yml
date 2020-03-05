@@ -20,6 +20,10 @@ build-electron:
   script:
     - yarn run build
     - yarn run dist
+  artifacts:
+    when: on_success
+    paths:
+      - dist/imagecaster.*
 
 test:
   stage: test
