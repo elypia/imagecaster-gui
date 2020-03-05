@@ -14,17 +14,12 @@ build:
   script:
     - yarn run build
 
-build-electron-linux:
+build-electron:
+  image: electronuserland/builder:wine
   stage: build
   script:
     - yarn run build
-    - yarn run dist -- --linux
-
-build-electron-win:
-  stage: build
-  script:
-    - yarn run build
-    - yarn run dist -- --win
+    - yarn run dist
 
 test:
   stage: test
