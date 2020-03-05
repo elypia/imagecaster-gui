@@ -1,17 +1,37 @@
 image: node:12.15.0-alpine3.11
 
+before_script:
+  - yarn install
+
 cache:
   paths:
+    - build/
     - node_modules/
 
 # Compile the website into static assets.
 build:
   stage: build
   script:
-    - yarn install
     - yarn run build
+
+build-electron-linux:
+  stage: build
+  script:
+    - yarn run build
+    - yarn run dist -- --linux
+
+build-electron-win:
+  stage: build
+  script:
+    - yarn run build
+    - yarn run dist -- --win
+
+test:
+  stage: test
+  script:
+    - yarn run test
 
 .test:
   stage: test
   script:
-    - npm run test
+    - yarn run test

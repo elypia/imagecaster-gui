@@ -2,6 +2,10 @@
   "name": "imagecaster-gui",
   "version": "0.3.0",
   "description": "The GUI made with React and Electron for ImageCaster.",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/Elypia/imagecaster-gui"
+  },
   "keywords": [
     "imagecaster",
     "react",
@@ -13,8 +17,24 @@
     "gui"
   ],
   "license": "Apache-2.0",
-  "author": "Elypia CIC",
+  "author": {
+    "name": "Seth Falco",
+    "url": "https://elypia.org/",
+    "email": "seth@elypia.org"
+  },
   "private": false,
+  "homepage": "./",
+  "main": "public/electron.js",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:electron": "electron-packager --all --out ./build-electron/ ./build/ imagecaster",
+    "test": "react-scripts test --coverage --watchAll false",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
@@ -43,16 +63,32 @@
   },
   "devDependencies": {
     "electron": "^8.0.0",
-    "electron-packager": "^14.2.1"
+    "electron-builder": "^22.4.0"
   },
-  "homepage": "./",
-  "main": "public/main.js",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build:electron": "electron-packager --all --out ./build-electron/ ./build/ imagecaster",
-    "test": "react-scripts test",
-    "electron": "electron ."
+  "build": {
+    "appId": "org.elypia.imagecaster",
+    "productName": "ImageCaster",
+    "copyright": "Copyright 2020-2020 Elypia CIC",
+    "artifactName": "imagecaster.${ext}",
+    "linux": {
+      "synopsis": "Perform bulk actions like resizing/recoloring or setting metadata against images or files.",
+      "category": "Graphics",
+      "desktop": {
+        "Type": "Application",
+        "Encoding": "UTF-8",
+        "Name": "ImageCaster",
+        "Comment": "GUI for ImageCaster",
+        "Categories": "Graphics",
+        "Terminal": false
+      }
+    },
+    "win": {
+      "target": "portable",
+      "icon": "build/android-chrome-512x512.png"
+    },
+    "mac": {
+      "category": "public.app-category.utilities"
+    }
   },
   "eslintConfig": {
     "extends": "react-app",
