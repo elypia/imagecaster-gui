@@ -1,7 +1,7 @@
 {
   "name": "imagecaster-gui",
   "version": "0.3.0",
-  "description": "The GUI made with React and Electron for ImageCaster.",
+  "description": "Perform bulk actions like resizing/recoloring or setting metadata against images or files.",
   "repository": {
     "type": "git",
     "url": "https://gitlab.com/Elypia/imagecaster-gui"
