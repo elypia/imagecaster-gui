@@ -1,7 +1,6 @@
 # ImageCaster GUI [![Matrix]][matrix-community] [![Discord]][discord-guild] [![Build]][gitlab] [![Coverage]][gitlab] [![Donate]][elypia-donate]
 ## Download
-| [Linux (AppImage)] | [Windows] |
-|--------------------|-----------|
+[![Linux (AppImage)]][linux-appimage-download] [![Windows (Portable)]][windows-portable-download]
 
 ## About
 The GUI for [ImageCaster], built with [React] and [Electron].
@@ -27,8 +26,8 @@ all rights are reserved by Elypia CIC.**
 [discord-guild]: https://discordapp.com/invite/hprGMaM "Discord Invite"
 [gitlab]: https://gitlab.com/Elypia/imagecaster-gui/commits/master "Repository on GitLab"
 [elypia-donate]: https://elypia.org/donate "Donate to Elypia"
-[Linux (AppImage)]: https://gitlab.com/Elypia/imagecaster-gui/-/jobs/artifacts/master/raw/dist/imagecaster.AppImage?job=build-electron "Download for Linux via AppImage"
-[Windows]: https://gitlab.com/Elypia/imagecaster-gui/-/jobs/artifacts/master/raw/dist/imagecaster.exe?job=build-electron "Download for Windows"
+[linux-appimage-download]: https://gitlab.com/Elypia/imagecaster-gui/-/jobs/artifacts/master/raw/dist/imagecaster.AppImage?job=build-electron "Download for Linux via AppImage"
+[windows-portable-download]: https://gitlab.com/Elypia/imagecaster-gui/-/jobs/artifacts/master/raw/dist/imagecaster.exe?job=build-electron "Download for Windows"
 [ImageCaster]: https://gitlab.com/Elypia/imagecaster "ImageCaster on GitLab"
 [React]: https://reactjs.org/ "React"
 [Electron]: https://www.electronjs.org/ "Electron"
@@ -41,4 +40,6 @@ all rights are reserved by Elypia CIC.**
 [Build]: https://gitlab.com/Elypia/imagecaster-gui/badges/master/pipeline.svg "GitLab Build Shield"
 [Coverage]: https://gitlab.com/Elypia/imagecaster-gui/badges/master/coverage.svg "GitLab Coverage Shield"
 [Donate]: https://img.shields.io/badge/Elypia-Donate-blueviolet "Donate Shield"
+[Linux (AppImage)]: https://img.shields.io/badge/Linux-AppImage-purple "AppImage Download for Linux"
+[Windows (Portable)]: https://img.shields.io/badge/Windows-Portable-blue "Portable Download for Windows"
 [GUI Preview]: assets/preview.png "Preview of ImageCaster GUI"
