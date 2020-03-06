@@ -1,10 +1,14 @@
 # ImageCaster GUI [![Matrix]][matrix-community] [![Discord]][discord-guild] [![Build]][gitlab] [![Coverage]][gitlab] [![Donate]][elypia-donate]
+## Download
+| [Linux (AppImage)] | [Windows] |
+|--------------------|-----------|
+
 ## About
 The GUI for [ImageCaster], built with [React] and [Electron].
 
 ![GUI Preview]
 
-# Requirements
+## Requirements
 * [ImageCaster]
 * [NodeJS 12.15.0]
 * [React]
@@ -23,6 +27,8 @@ all rights are reserved by Elypia CIC.**
 [discord-guild]: https://discordapp.com/invite/hprGMaM "Discord Invite"
 [gitlab]: https://gitlab.com/Elypia/imagecaster-gui/commits/master "Repository on GitLab"
 [elypia-donate]: https://elypia.org/donate "Donate to Elypia"
+[Windows]: https://gitlab.com/Elypia/imagecaster-gui/-/jobs/artifacts/master/raw/imagecaster.exe?job=build "Download for Windows"
+[Linux (AppImage)]: https://gitlab.com/Elypia/imagecaster-gui/-/jobs/artifacts/master/raw/imagecaster.AppImage?job=build "Download for Linux via AppImage"
 [ImageCaster]: https://gitlab.com/Elypia/imagecaster "ImageCaster on GitLab"
 [React]: https://reactjs.org/ "React"
 [Electron]: https://www.electronjs.org/ "Electron"
