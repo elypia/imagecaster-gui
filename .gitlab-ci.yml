@@ -31,8 +31,3 @@ test:
   stage: test
   script:
     - yarn run test
-
-.test:
-  stage: test
-  script:
-    - yarn run test
