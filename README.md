@@ -39,6 +39,6 @@ all rights are reserved by Elypia CIC.**
 [Build]: https://gitlab.com/Elypia/imagecaster-gui/badges/master/pipeline.svg "GitLab Build Shield"
 [Coverage]: https://gitlab.com/Elypia/imagecaster-gui/badges/master/coverage.svg "GitLab Coverage Shield"
 [Donate]: https://img.shields.io/badge/Elypia-Donate-blueviolet "Donate Shield"
-[Linux (AppImage)]: https://img.shields.io/badge/Linux-AppImage-purple "AppImage Download for Linux"
-[Windows (Portable)]: https://img.shields.io/badge/Windows-Portable-blue "Portable Download for Windows"
+[Linux (AppImage)]: https://img.shields.io/badge/Linux-AppImage-yellow?logo=linux "AppImage Download for Linux"
+[Windows (Portable)]: https://img.shields.io/badge/Windows-Portable-blue?logo=windows "Portable Download for Windows"
 [GUI Preview]: assets/preview.png "Preview of ImageCaster GUI"
