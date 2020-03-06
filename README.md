@@ -3,8 +3,7 @@
 [![Linux (AppImage)]][linux-appimage-download] [![Windows (Portable)]][windows-portable-download]
 
 ## About
-The GUI for [ImageCaster], built with [React] and [Electron].
-
+The GUI for [ImageCaster], built with [React] and [Electron].  
 ![GUI Preview]
 
 ## Requirements

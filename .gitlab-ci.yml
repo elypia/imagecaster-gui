@@ -5,8 +5,6 @@ before_script:
 
 cache:
   paths:
-    - ~/.cache/electron
-    - ~/.cache/electron-builder
     - node_modules/
     - build/
 
