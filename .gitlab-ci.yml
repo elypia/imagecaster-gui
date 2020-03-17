@@ -3,6 +3,9 @@ image: node:12.15.0-alpine3.11
 before_script:
   - yarn install
 
+variables:
+  IMAGECASTER_ARCHIVE: imagecaster.zip
+
 cache:
   paths:
     - node_modules/
@@ -14,14 +17,23 @@ build:
   script:
     - yarn run build
 
-build-electron:
+build-electron-linux:
   image: electronuserland/builder:wine
   stage: build
   script:
-    - yarn run build
-    - yarn run dist
+    - wget --output-document ${IMAGECASTER_ARCHIVE} https://gitlab.com/Elypia/imagecaster/-/jobs/473697208/artifacts/download
+    - yarn run electron:linux
   artifacts:
-    when: on_success
+    paths:
+      - dist/imagecaster.*
+
+build-electron-windows:
+  image: electronuserland/builder:wine
+  stage: build
+  script:
+    - wget --output-document ${IMAGECASTER_ARCHIVE} https://gitlab.com/Elypia/imagecaster/-/jobs/473697196/artifacts/download
+    - yarn run electron:win
+  artifacts:
     paths:
       - dist/imagecaster.*
 

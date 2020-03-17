@@ -4,6 +4,7 @@
 
 ## About
 The GUI for [ImageCaster], built with [React] and [Electron].  
+
 ![GUI Preview]
 
 ## Requirements
