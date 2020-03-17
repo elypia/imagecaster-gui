@@ -9,7 +9,6 @@ variables:
 cache:
   paths:
     - node_modules/
-    - build/
 
 # Compile the website into static assets.
 build:
