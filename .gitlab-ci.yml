@@ -18,10 +18,11 @@ build:
     - yarn run build
 
 build-electron-linux:
-  image: electronuserland/builder:wine
+  image: electronuserland/builder:12-11.19
   stage: build
   script:
     - wget --output-document ${IMAGECASTER_ARCHIVE} https://gitlab.com/Elypia/imagecaster/-/jobs/473697208/artifacts/download
+    - unzip ${IMAGECASTER_ARCHIVE}
     - yarn run electron:linux
   artifacts:
     paths:
@@ -32,6 +33,7 @@ build-electron-windows:
   stage: build
   script:
     - wget --output-document ${IMAGECASTER_ARCHIVE} https://gitlab.com/Elypia/imagecaster/-/jobs/473697196/artifacts/download
+    - unzip ${IMAGECASTER_ARCHIVE}
     - yarn run electron:win
   artifacts:
     paths:
